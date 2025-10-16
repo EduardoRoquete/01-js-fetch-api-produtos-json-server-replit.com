@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const replit = 'https://6a0f147d-da74-4ae1-b8ca-7a7828542734-00-h6nwxazwm4tw.worf.replit.dev/'; // URL do projeto no Replit.com.
+    const replit = 'https://ea0128bf-100a-49c9-8b9b-a5e48f61f8ed-00-16mpnw1p0946d.janeway.replit.dev/'; // URL do projeto no Replit.com.
     const url = replit + "produtos";
 
     const formularioDeProduto = document.getElementById('formulario-de-produto');
@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
             body: JSON.stringify(produto)
         })
             .then(response => response.json())
-            .then(() => buscarProdutos())
+            .then(() => buscarProdutos()) //refresh, buscar os produtos
             .catch(() => alert("Erro ao enviar produto!"));
     };
 
@@ -115,7 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 document.getElementById('quantidade').value = produto.quantidade;
                 document.getElementById('preco').value = produto.preco;
                 botaoEnviar.textContent = 'Atualizar Produto';
-                window.scrollTo(0, 0);
+                window.scrollTo(0, 0); //volta a pagina pro inicio
             }
         } else if (alvo.classList.contains('botao-excluir')) {
             if (confirm('Tem certeza que deseja excluir este produto?')) {
